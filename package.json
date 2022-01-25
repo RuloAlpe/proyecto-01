@@ -1,0 +1,55 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "local": "NODE_ENV=test nodemon  --experimental-modules src/index.js --exec  babel-node",
+    "build": "babel ./src -d dist --presets latest-node --ignore node_modules",
+    "start": "node dist/index.js",
+    "test": "jest",
+    "lint": "eslint ./src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.16.7",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.5",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.14.0"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb/base",
+      "plugin:import/errors"
+    ],
+    "rules": {
+      "no-use-before-define": 0,
+      "arrow-body-style": 0,
+      "dot-notation": 0,
+      "no-console": 0,
+      "import/no-unresolved": 0
+    }
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
